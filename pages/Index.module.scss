@@ -1,0 +1,399 @@
+.nav__input {
+  padding: 0 24px 0 48px;
+  height: 52px;
+  border-radius: 52px;
+  border: 0;
+  outline: 0;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: inset 0 0 0 1px var(--color-border);
+}
+
+.nav__input__container {
+  position: relative;
+  width: 100%;
+}
+
+.nav__button {
+  padding: 0 36px 0 36px;
+  height: 52px;
+  border-radius: 52px;
+  border: 0;
+  outline: 0;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  color: var(--color-text-button);
+  background: var(--color-background-button);
+}
+
+.top {
+  display: block;
+  width: 100%;
+  background: var(--color-background-secondary);
+}
+
+.hero {
+  padding: 48px;
+  width: 100%;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  background: var(--color-background-button);
+  max-width: 568px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 1px 24px rgba(0, 0, 0, 0.1);
+}
+
+.card__image {
+  border-radius: 8px 8px 0 0;
+  display: block;
+  width: 100%;
+}
+
+.card__description {
+  font-family: "MonoMedium";
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 24px;
+  color: var(--color-text-button);
+  border-radius: 0px 0px 8px 8px;
+}
+
+.h1 {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.h2 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.aside {
+  font-size: 14px;
+  color: var(--color-border);
+  margin-top: 4px;
+}
+
+.paragraph {
+  margin-top: 24px;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+// -----------------------------------------------
+
+.box {
+  font-size: 16px;
+  padding: 24px 24px 20px 24px;
+  width: 100%;
+  min-width: 480px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  box-shadow: 0 1px 24px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background: var(--color-background-foreground);
+  margin-bottom: 24px;
+
+  @media (max-width: 768px) {
+    min-width: 200px;
+  }
+}
+
+.box__left {
+  flex-shrink: 0;
+}
+
+.box__right {
+  min-width: 10%;
+  width: 100%;
+}
+
+.box__creator {
+  border-left: 1px solid var(--color-subdued);
+  padding: 0px 48px 16px 48px;
+}
+
+.box__label {
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.box__emphasis {
+  font-size: 32px;
+  font-weight: 500;
+  padding-right: 88px;
+}
+
+.box__sublabel {
+  font-weight: 500;
+  color: var(--color-border);
+}
+
+.box__author {
+  height: 48px;
+  border-radius: 48px;
+  padding: 16px;
+  background: var(--color-background-foreground);
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 16px rgba(0, 0, 0, 0.1);
+}
+
+.box__author__left {
+  flex-shrink: 0;
+}
+
+.box__author__left__image {
+  height: 32px;
+  border-radius: 100%;
+}
+
+.box__author__right {
+  min-width: 10%;
+  width: 100%;
+  font-weight: 500;
+  padding-left: 12px;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.box__row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.box__row__left {
+  min-width: 10%;
+  width: 100%;
+
+  strong {
+    opacity: 0.6;
+  }
+}
+
+.box__row__right {
+  flex-shrink: 0;
+}
+
+// -----------------------------------------------
+
+.navigation {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 24px 0 24px;
+  max-width: 1280px;
+  margin: 0 auto 0 auto;
+}
+
+.navigation__left {
+  flex-shrink: 0;
+  height: 52px;
+  display: flex;
+  align-items: center;
+}
+
+.navigation__middle {
+  min-width: 10%;
+  width: 100%;
+  padding: 0 24px 0 24px;
+
+  @media (max-width: 960px) {
+    display: none;
+  }
+}
+
+.navigation__right {
+  flex-shrink: 0;
+
+  @media (max-width: 960px) {
+    display: none;
+  }
+}
+
+// -----------------------------------------------
+
+// -----------------------------------------------
+
+.body {
+}
+
+.body__tools {
+  width: 100%;
+  padding: 0 24px 0 24px;
+  max-width: 1280px;
+  margin: 0 auto 0 auto;
+}
+
+.body__tools__left {
+  flex-shrink: 0;
+  position: relative;
+  width: 200px;
+  height: 48px;
+}
+
+.body__tools__left__author {
+  position: absolute;
+  top: -24px;
+}
+
+.body__tools__right {
+}
+
+.body__content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0 24px 0 24px;
+  max-width: 1280px;
+  margin: 0 auto 0 auto;
+
+  @media (max-width: 960px) {
+    display: block;
+  }
+}
+
+.body__content__left {
+  min-width: 10%;
+  width: 100%;
+  padding-right: 64px;
+  padding-bottom: 48px;
+
+  @media (max-width: 960px) {
+    padding-right: 0px;
+  }
+}
+
+.body__content__right {
+  flex-shrink: 0;
+  padding-bottom: 48px;
+
+  @media (max-width: 960px) {
+    width: 100%;
+  }
+}
+
+// -----------------------------------------------
+
+.footer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 48px 24px 24px 24px;
+  max-width: 1280px;
+  margin: 0 auto 0 auto;
+  color: var(--color-border);
+}
+
+.footer__item {
+  font-weight: 500;
+  font-size: 12px;
+  margin-left: 16px;
+  margin-top: 4px;
+}
+
+.footer__left {
+  min-width: 10%;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+}
+
+.footer__right {
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: flex-end;
+
+  @media (max-width: 960px) {
+    display: none;
+  }
+}
+
+// -----------------------------------------------
+
+.creator {
+  padding: 0 24px 0 24px;
+  max-width: 1280px;
+  margin: 0 auto 0 auto;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.creator__heading {
+  padding: 24px 0 24px 0;
+  font-weight: 400;
+  border-bottom: var(--color-border) 1px solid;
+}
+
+.creator__meta {
+  padding: 48px 0 48px 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  @media (max-width: 960px) {
+    display: block;
+  }
+}
+
+.creator__meta__left {
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.creator__meta__left__avatar {
+  flex-shrink: 0;
+}
+
+.creator__meta__left__avatar__image {
+  width: 128px;
+  display: block;
+  border-radius: 100%;
+  box-shadow: 0 1px 16px rgba(0, 0, 0, 0.1);
+}
+
+.creator__meta__right {
+  font-weight: 400;
+  padding-top: 34px;
+  padding-left: 156px;
+  min-width: 10%;
+  width: 100%;
+  line-height: 1.225;
+  font-size: 24px;
+
+  @media (max-width: 960px) {
+    padding-left: 0px;
+  }
+}
+
+.creator__meta__left__body {
+  padding-left: 48px;
+  padding-top: 28px;
+  min-width: 10%;
+  width: 100%;
+}
+
+.creator__meta__name {
+  font-size: 32px;
+}
+
+.creator__meta__tagname {
+  margin-top: 4px;
+  font-size: 24px;
+}

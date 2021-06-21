@@ -1,12 +1,10 @@
-import styles from "@components/App.module.scss";
-
 import * as React from "react";
 import * as Requests from "@common/requests";
 import * as Utilities from "@common/utilities";
 
 import App from "@components/App";
 
-function Home(props) {
+function Index(props) {
   React.useEffect(() => {
     async function fetchData() {
       const response = await fetch("/api");
@@ -19,9 +17,8 @@ function Home(props) {
 
   return (
     <App>
-      <div className={styles.center}>
-        <p className={styles.paragraph}>From here, you can start any project you like.</p>
-      </div>
+      Prototypes are hosted on this website, you need to know the specific URL
+      to see them.
     </App>
   );
 }
@@ -32,4 +29,4 @@ export async function getServerSideProps(context) {
   };
 }
 
-export default Home;
+export default Index;

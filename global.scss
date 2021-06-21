@@ -1,6 +1,7 @@
 @font-face {
-  font-family: "Body";
-  src: url("/BodyText-Regular.woff") format("woff");
+  font-family: "MonoMedium";
+  src: url("https://next-s3-public.s3.us-west-2.amazonaws.com/JetBrainsMono-Medium.woff2")
+    format("woff");
 }
 
 html,
@@ -107,13 +108,20 @@ section {
 
 html,
 body {
-  --color-background: #000000;
-  --color-text: #ffffff;
+  --color-background: rgba(253, 253, 253, 1);
+  --color-background-secondary: rgba(242, 242, 242, 1);
+  --color-background-foreground: rgba(255, 255, 255, 1);
+  --color-border: rgba(188, 188, 188, 1);
+  --color-subdued: rgba(128, 128, 128, 0.1);
+  --color-background-button: rgba(0, 0, 0, 1);
+  --color-text: rgba(0, 0, 0, 1);
+  --color-text-button: rgba(255, 255, 255, 1);
 
   font-size: 14px;
   background: var(--color-background);
   color: var(--color-text);
-  font-family: -apple-system, BlinkMacSystemFont, helvetica neue, helvetica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, helvetica neue, helvetica,
+    sans-serif;
   scrollbar-width: none;
   -ms-overflow-style: -ms-autohiding-scrollbar;
 
