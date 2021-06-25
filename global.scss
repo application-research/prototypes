@@ -1,4 +1,10 @@
 @font-face {
+  font-family: "Mono";
+  src: url("https://next-s3-public.s3.us-west-2.amazonaws.com/JetBrainsMono-Regular.woff2")
+    format("woff");
+}
+
+@font-face {
   font-family: "MonoMedium";
   src: url("https://next-s3-public.s3.us-west-2.amazonaws.com/JetBrainsMono-Medium.woff2")
     format("woff");
@@ -116,6 +122,7 @@ body {
   --color-background-button: rgba(0, 0, 0, 1);
   --color-text: rgba(0, 0, 0, 1);
   --color-text-button: rgba(255, 255, 255, 1);
+  --color-primary: blue;
 
   font-size: 14px;
   background: var(--color-background);

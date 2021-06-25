@@ -1,0 +1,19 @@
+.compliance {
+  padding: 16px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 1px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.compliance__left {
+  min-width: 10%;
+  width: 100%;
+}
+
+.compliance__right {
+  flex-shrink: 0;
+}

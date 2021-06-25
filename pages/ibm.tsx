@@ -7,8 +7,9 @@ import * as Utilities from "@common/utilities";
 import App from "@components/App";
 import FoundationLogo from "@components/FoundationLogo";
 import Filecoin from "@components/Filecoin";
+import Navigation from "@components/Navigation";
+import Footer from "@components/Footer";
 import IconBox from "@components/IconBox";
-import IconSearch from "@components/IconSearch";
 
 const CREATOR = {
   username: "@ibm",
@@ -197,42 +198,9 @@ const ACTIVITY = [
 ];
 
 function IBM(props) {
-  React.useEffect(() => {
-    async function fetchData() {
-      const response = await fetch("/api");
-      const json = await response.json();
-      console.log(json);
-    }
-
-    fetchData();
-  }, []);
-
   return (
     <App>
-      <div className={styles.top}>
-        <nav className={styles.navigation}>
-          <span className={styles.navigation__left}>
-            <FoundationLogo height="32px" />
-          </span>
-
-          <span className={styles.navigation__middle}>
-            <div className={styles.nav__input__container}>
-              <IconSearch
-                height="20px"
-                style={{ position: "absolute", top: 16, left: 16 }}
-              />
-              <input
-                className={styles.nav__input}
-                placeholder="Search Foundation..."
-              />
-            </div>
-          </span>
-
-          <span className={styles.navigation__right}>
-            <button className={styles.nav__button}>Connect Wallet</button>
-          </span>
-        </nav>
-
+      <Navigation>
         <div className={styles.hero}>
           <div className={styles.card}>
             <img className={styles.card__image} src="/data-ibm.jpg" />
@@ -241,7 +209,7 @@ function IBM(props) {
             </div>
           </div>
         </div>
-      </div>
+      </Navigation>
 
       <div className={styles.body}>
         <div className={styles.body__tools}>
@@ -446,24 +414,7 @@ function IBM(props) {
         </div>
       </div>
 
-      <footer className={styles.footer}>
-        <div className={styles.footer__left}>
-          <FoundationLogo height="24px" />
-
-          <span className={styles.footer__item}>Instagram</span>
-          <span className={styles.footer__item}>Twitter</span>
-          <span className={styles.footer__item}>Discord</span>
-          <span className={styles.footer__item}>Blog</span>
-        </div>
-        <div className={styles.footer__right}>
-          <span className={styles.footer__item}>About</span>
-          <span className={styles.footer__item}>Community Guidelines</span>
-          <span className={styles.footer__item}>Terms of Service</span>
-          <span className={styles.footer__item}>Privacy</span>
-          <span className={styles.footer__item}>Careers</span>
-          <span className={styles.footer__item}>Help</span>
-        </div>
-      </footer>
+      <Footer />
     </App>
   );
 }

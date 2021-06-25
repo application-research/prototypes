@@ -7,8 +7,11 @@ import * as Utilities from "@common/utilities";
 import App from "@components/App";
 import FoundationLogo from "@components/FoundationLogo";
 import Filecoin from "@components/Filecoin";
+import Navigation from "@components/Navigation";
+import Footer from "@components/Footer";
 import IconBox from "@components/IconBox";
-import IconSearch from "@components/IconSearch";
+import Compliance from "@components/Compliance";
+import Checkmark from "@components/Checkmark";
 
 const CREATOR = {
   username: "@google",
@@ -27,14 +30,90 @@ const RECIPIENT = {
 
 const ACTIVITY = [
   {
+    username: "@jbenet",
+    src: "/avatar-juan.png",
+    amount: "77 FIL",
+    usd: "$7700.00 USD",
+    date: "July 19th, 2021 at 12:23 AM",
+    settled: true,
+    message: (
+      <React.Fragment>
+        Auction won by <strong>@jbenet</strong> (f13370)
+      </React.Fragment>
+    ),
+  },
+  {
+    username: "@zuck",
+    src: "/avatar-zuck.jpg",
+    amount: "64 FIL",
+    usd: "$6400.00 USD",
+    date: "July 19th, 2021 at 12:23 AM",
+    settled: true,
+    message: (
+      <React.Fragment>
+        Auction won by <strong>@zuck</strong> (f12218)
+      </React.Fragment>
+    ),
+  },
+  {
+    username: "@satya",
+    src: "/avatar-satya.jpg",
+    amount: "63 FIL",
+    usd: "$6300.00 USD",
+    date: "July 19th, 2021 at 12:23 AM",
+    settled: true,
+    message: (
+      <React.Fragment>
+        Auction won by <strong>@satya</strong> (f12221)
+      </React.Fragment>
+    ),
+  },
+  {
     username: RECIPIENT.username,
     src: RECIPIENT.src,
     amount: RECIPIENT.amount,
     usd: RECIPIENT.usd,
     date: "July 19th, 2021 at 12:23 AM",
+    settled: true,
     message: (
       <React.Fragment>
-        Auction settled by <strong>@sundar</strong>
+        Auction won by <strong>@sundar</strong> (f01239)
+      </React.Fragment>
+    ),
+  },
+  {
+    username: "@jbenet",
+    src: "/avatar-juan.png",
+    amount: "77 FIL",
+    usd: "$7700.00 USD",
+    date: "July 18st, 2021 at 5:00 PM",
+    message: (
+      <React.Fragment>
+        Bid placed by <strong>@jbenet</strong>
+      </React.Fragment>
+    ),
+  },
+  {
+    username: "@zuck",
+    src: "/avatar-zuck.jpg",
+    amount: "64 FIL",
+    usd: "$6400.00 USD",
+    date: "July 18st, 2021 at 4:40 PM",
+    message: (
+      <React.Fragment>
+        Bid placed by <strong>@zuck</strong>
+      </React.Fragment>
+    ),
+  },
+  {
+    username: "@satya",
+    src: "/avatar-satya.jpg",
+    amount: "63 FIL",
+    usd: "$6300.00 USD",
+    date: "July 18st, 2021 at 4:20 PM",
+    message: (
+      <React.Fragment>
+        Bid placed by <strong>@satya</strong>
       </React.Fragment>
     ),
   },
@@ -101,42 +180,9 @@ const ACTIVITY = [
 ];
 
 function Google(props) {
-  React.useEffect(() => {
-    async function fetchData() {
-      const response = await fetch("/api");
-      const json = await response.json();
-      console.log(json);
-    }
-
-    fetchData();
-  }, []);
-
   return (
     <App>
-      <div className={styles.top}>
-        <nav className={styles.navigation}>
-          <span className={styles.navigation__left}>
-            <FoundationLogo height="32px" />
-          </span>
-
-          <span className={styles.navigation__middle}>
-            <div className={styles.nav__input__container}>
-              <IconSearch
-                height="20px"
-                style={{ position: "absolute", top: 16, left: 16 }}
-              />
-              <input
-                className={styles.nav__input}
-                placeholder="Search Foundation..."
-              />
-            </div>
-          </span>
-
-          <span className={styles.navigation__right}>
-            <button className={styles.nav__button}>Connect Wallet</button>
-          </span>
-        </nav>
-
+      <Navigation>
         <div className={styles.hero}>
           <div className={styles.card}>
             <img className={styles.card__image} src="/data-google.png" />
@@ -145,7 +191,7 @@ function Google(props) {
             </div>
           </div>
         </div>
-      </div>
+      </Navigation>
 
       <div className={styles.body}>
         <div className={styles.body__tools}>
@@ -213,36 +259,6 @@ function Google(props) {
 
             <br />
             <br />
-            <br />
-            <br />
-
-            <div className={styles.box__label} style={{ marginBottom: 8 }}>
-              Preservation Rights
-            </div>
-            <div className={styles.h1}>1</div>
-
-            <br />
-            <br />
-
-            <div className={styles.box__label} style={{ marginBottom: 8 }}>
-              Requirements
-            </div>
-            <div className={styles.h1}>
-              USA, Europe, Japan, and Public Domain
-            </div>
-
-            <br />
-            <br />
-
-            <div className={styles.box__label} style={{ marginBottom: 8 }}>
-              Duration
-            </div>
-            <div className={styles.h1}>40 Years</div>
-
-            <br />
-            <br />
-            <br />
-            <br />
 
             <div
               className={styles.box}
@@ -279,43 +295,73 @@ function Google(props) {
                 </div>
               </div>
             </div>
-          </div>
-          <div className={styles.body__content__right}>
-            <div className={styles.box}>
-              <div className={styles.box__left}>
-                <div className={styles.box__label}>Sold for</div>
-                <div className={styles.box__emphasis} style={{ marginTop: 8 }}>
-                  {RECIPIENT.amount}
-                </div>
-                <div className={styles.box__sublabel} style={{ marginTop: 2 }}>
-                  {RECIPIENT.usd}
-                </div>
-              </div>
-              <div className={styles.box__right}>
-                <div className={styles.box__creator}>
-                  <div className={styles.box__label}>Preserved by</div>
-                  <div className={styles.box__author}>
-                    <div className={styles.box__author__left}>
-                      <img
-                        className={styles.box__author__left__image}
-                        src={RECIPIENT.src}
-                      />
-                    </div>
-                    <div className={styles.box__author__right}>
-                      {RECIPIENT.username}
-                    </div>
-                  </div>
-                </div>
-              </div>
+
+            <br />
+            <br />
+            <br />
+            <br />
+
+            <div className={styles.box__label} style={{ marginBottom: 8 }}>
+              Total provider editions
+            </div>
+            <div className={styles.h1}>4</div>
+
+            <div className={styles.aside}>
+              This means that only 4 data storage providers can win this bid.
             </div>
 
-            <h2 className={styles.h2} style={{ marginBottom: 24 }}>
+            <br />
+            <br />
+            <Compliance accepted>
+              Countries: USA, Germany, Norway, China
+            </Compliance>
+            <Compliance accepted>Continents: North America, Asia</Compliance>
+            <Compliance accepted>Duration: 40 Years</Compliance>
+            <Compliance accepted>
+              License: Apache License, Version 2.0
+            </Compliance>
+            <Compliance accepted>Total Tax Compliance</Compliance>
+            <Compliance accepted>
+              Children's Internet Protection Act (CIPA)
+            </Compliance>
+            <Compliance accepted>SOC II Type 2</Compliance>
+            <Compliance accepted>0 faults in the last 30 Days</Compliance>
+            <Compliance accepted>0 slashes in the last 30 Days</Compliance>
+            <Compliance accepted>100% storage success rate</Compliance>
+            <Compliance accepted>Trading with the Enemy Act (TWEA)</Compliance>
+            <Compliance accepted>
+              Cybersecurity Information Sharing Act (CISA)
+            </Compliance>
+            <br />
+            <br />
+            <br />
+            <br />
+          </div>
+          <div className={styles.body__content__right}>
+            <h2
+              className={styles.h2}
+              style={{ marginBottom: 24, marginTop: 8 }}
+            >
               Activity
             </h2>
 
             {ACTIVITY.map((each, index) => (
               <div className={styles.box} key={`each-${index}`}>
                 <div className={styles.box__left}>
+                  {each.settled ? (
+                    <Checkmark
+                      height="16px"
+                      style={{
+                        color: "green",
+                        position: "absolute",
+                        background: "#fff",
+                        padding: 4,
+                        borderRadius: "100%",
+                        bottom: -6,
+                        right: -6,
+                      }}
+                    />
+                  ) : null}
                   <img
                     src={each.src}
                     style={{ marginTop: 4 }}
@@ -326,7 +372,10 @@ function Google(props) {
                   <div className={styles.box__row}>
                     <div
                       className={styles.box__row__left}
-                      style={{ fontWeight: 500 }}
+                      style={{
+                        fontWeight: 500,
+                        color: each.settled ? "green" : null,
+                      }}
                     >
                       {each.message}
                     </div>
@@ -341,7 +390,7 @@ function Google(props) {
                     <div className={styles.box__row__left}>{each.date}</div>
                     <div
                       className={styles.box__row__right}
-                      style={{ fontWeight: 500, color: `var(--color-border` }}
+                      style={{ fontWeight: 500, color: `var(--color-border)` }}
                     >
                       {each.usd}
                     </div>
@@ -379,24 +428,7 @@ function Google(props) {
         </div>
       </div>
 
-      <footer className={styles.footer}>
-        <div className={styles.footer__left}>
-          <FoundationLogo height="24px" />
-
-          <span className={styles.footer__item}>Instagram</span>
-          <span className={styles.footer__item}>Twitter</span>
-          <span className={styles.footer__item}>Discord</span>
-          <span className={styles.footer__item}>Blog</span>
-        </div>
-        <div className={styles.footer__right}>
-          <span className={styles.footer__item}>About</span>
-          <span className={styles.footer__item}>Community Guidelines</span>
-          <span className={styles.footer__item}>Terms of Service</span>
-          <span className={styles.footer__item}>Privacy</span>
-          <span className={styles.footer__item}>Careers</span>
-          <span className={styles.footer__item}>Help</span>
-        </div>
-      </footer>
+      <Footer />
     </App>
   );
 }

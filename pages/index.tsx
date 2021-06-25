@@ -5,16 +5,6 @@ import * as Utilities from "@common/utilities";
 import App from "@components/App";
 
 function Index(props) {
-  React.useEffect(() => {
-    async function fetchData() {
-      const response = await fetch("/api");
-      const json = await response.json();
-      console.log(json);
-    }
-
-    fetchData();
-  }, []);
-
   return (
     <App>
       Prototypes are hosted on this website, you need to know the specific URL
